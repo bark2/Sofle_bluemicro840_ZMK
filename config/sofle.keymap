@@ -36,10 +36,10 @@
 // | SHIFT |  Z  |  X  |  C   |  V   |  B   |  MUTE|  |         |  N   |  M    |  ,    |  .   |   ?   |   !   |
 //               | Left| CTRL | ALT  | SHIFT| BSPC |  | SPACE | RET  | CTRL  | CAPS  | Right
             bindings = <
-&bt BT_CLR &kp N1 &kp N2   &kp N3   &kp N4    &kp N5                      &kp N6 &kp N7    &kp N8    &kp N9   &kp N0    &kp MINUS
+&kp N0 &kp N1 &kp N2   &kp N3   &kp N4    &kp N5                      &kp N6 &kp N7    &kp N8    &kp N9   &kp N0    &kp MINUS
 &kp ESC   &kp Q  &kp W    &kp E    &kp R     &kp T                       &kp Y  &kp U     &kp I     &kp O    &kp P     &kp BSPC
 &kp TAB   &kp A  &kp S    &kp D    &kp F     &kp G                       &kp H  &kp J     &kp K     &kp L    &kp SEMI  &kp SQT
-&bt BT_SEL 4 &kp Z  &kp X    &kp C    &kp V     &kp B  &kp C_MUTE    &none  &kp N  &kp M     &kp COMMA &kp DOT  &kp QMARK &kp EXCL
+&kp N1 4 &kp Z  &kp X    &kp C    &kp V     &kp B  &kp C_MUTE    &none  &kp N  &kp M     &kp COMMA &kp DOT  &kp QMARK &kp EXCL
                  &mo 1 &kp LCTRL &kp LALT &kp LSHFT  &kp BSPC                  &kp SPACE &kp RET  &kp RCTRL &kp CAPS  &mo 2
             >;
 
