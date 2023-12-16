@@ -46,18 +46,25 @@
 // | SHIFT |  Z  |  X  |  C   |  V   |  B   |  MUTE  |  |       |  N   |  M    |  ,    |  .   |   /   | SHIFT |
 //               | GUI | GUI  | ALT  | LOWER|  RET   |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
             bindings = <
-&kp ESC   &kp N1 &kp N2   &kp N3   &kp N4    &kp N5                      &kp N6    &kp N7              &kp N8               &kp N9          &kp N0          &kp RET
-&kp TAB   &kp Q  &kp W    &kp E    &kp R     &kp T                       &kp Y     &kp U               &kp I                &kp O           &kp P           &kp BSPC
-&kp LCTRL &kp A  &hm_r LALT S    &hm_r LCTRL D    &hm_shift_r LSHFT F     &kp G                       &kp H     &hm_shift_r RSHFT J &hm_r RCTRL K        &hm_r LALT L    &kp SEMI &kp SQT
-&kp LSHFT &kp Z  &kp X    &kp C    &kp V     &kp B     &kp C_MUTE &none  &kp N     &kp M               &kp COMMA            &kp DOT         &kp FSLH &kp RSHFT
-                 &kp LGUI &kp LGUI &kp LGUI  &kp LALT  &mo 2      &mo 1  &kp SPACE &kp RCTRL           &kp RALT             &kp RGUI
+&kp ESC	&kp N1		&kp N2		&kp N3		&kp N4		&kp N5		&kp N6		&kp N7		&kp N8		&kp N9		&kp N0		&kp RET
+&kp TAB	&kp Q		&kp W		&kp E		&kp R		&kp T		&kp Y		&kp U           &kp I           &kp O		&kp P           &kp BSPC
+&kp LCTRL	&kp A		&hm_r LALT S    &hm_r LCTRL D   &hm_shift_r LSHFT F &kp G       &kp H		&hm_shift_r RSHFT J		&hm_r RCTRL K   &hm_r LALT L    &kp SEMI &kp SQT
+&kp LSHFT &kp Z &kp X		&kp C		&kp V		&kp B		&kp C_MUTE	&none		&kp N		&kp M           &kp COMMA       &kp DOT         &kp FSLH &kp RSHFT
+                &kp LGUI	&kp LGUI	&kp LGUI	&kp LALT	&mo 2		&mo 1		&kp LSHFT	&kp RCTRL       &kp RALT        &kp RGUI
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
         lower_layer {
-// TODO: Some binds are waiting for shifted keycode support.
+
+// TODO:
+// - the topmost row is useless here.
+// - both '>' and '<' are frequently used with "=" or "-", yet is missing from this keymap.
+//   a special macro for it? or maybe utilize shift?
+// - hold (some pinky key ? both function keys ?) for a layer ?  
+// - some binds are waiting for shifted keycode support
+// - try out the next key after shift to be space ?
 // ------------------------------------------------------------------------------------------------------------
 // | `     |  F1 |  F2 |  F3  |  F4  |  F5  |                   |  F6  |  F7   |  F8   |  F9  |  F10  |  F11  |
 // |       |  !  |  @  |  #   |  $   |  %   |                   |  ^   |  &    |  *    |  {   |   }   |   |   |
@@ -78,16 +85,16 @@
         raise_layer {
 // ------------------------------------------------------------------------------------------------------------
 // |BTCLR| BT1  | BT2  |  BT3  |  BT4  |  BT5 |                |      |      |       |      |       |       |
-// |     | INS  | PSCR | GUI   |       |      |                | PGUP |      |   ^   |      |   ^   |       |
-// |     | ALT  | CTRL | SHIFT |       | CAPS |                | PGDN |   <- |   v   |  ->  |  DEL  | BKSPC |
-// |     | volu | vold | play  | PASTE |      |      |  |      |      |   v  |       |      |       |       |
+// |     | INS  | PSCR | GUI   |       |      |                | PGUP |      |   ^   |      |       |       |
+// |     | ALT  | CTRL | SHIFT |       | CAPS |                | PGDN |   <- |   v   |  ->  |  DEL  |       |
+// |     | volu | vold | play  | PASTE |      |      |  |      |      | BSPC |  SPC  |      |       |       |
 //              |      |       |       |      |      |  |      |      |      |       |      |
             bindings = <
-&bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4             &trans    &trans    &trans   &trans    &trans  &trans
-&trans     &kp INS      &kp PSCRN    &kp K_CMENU  &trans       &trans                   &kp PG_UP &trans    &kp UP   &trans    &kp UP  &trans
-&trans     &kp LALT     &kp LCTRL    &kp LSHFT    &trans       &kp CLCK                 &kp PG_DN &kp LEFT  &kp DOWN &kp RIGHT &kp DEL &kp BSPC
-&trans     &kp K_VOL_UP &kp K_VOL_DN &kp C_PP  &kp K_PASTE  &trans  &trans   &trans  &kp DOWN    &trans    &trans   &trans    &trans  &trans
-                        &trans       &trans       &trans       &trans  &trans   &trans  &trans    &trans    &trans   &trans
+&bt BT_CLR	&bt BT_SEL 0	&bt BT_SEL 1	&bt BT_SEL 2	&bt BT_SEL 3	&bt BT_SEL 4					&trans		&trans		&trans		&trans		&trans		&trans
+&trans		&kp INS		&kp PSCRN	&kp K_CMENU	&trans		&trans						&kp PG_UP	&trans		&kp UP		&trans		&trans		&trans
+&trans		&kp LALT	&kp LCTRL	&kp LSHFT	&trans		&kp CLCK					&kp PG_DN	&kp LEFT	&kp DOWN	&kp RIGHT	&kp DEL		&trans
+&trans		&kp K_VOL_UP	&kp K_VOL_DN	&kp C_PP	&kp K_PASTE	&trans		&none		&none		&kp BSPC	&kp SPACE	&trans		&trans		&trans		&trans
+				&trans		&trans		&trans		&trans		&trans		&trans		&trans		&trans		&trans		&trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
